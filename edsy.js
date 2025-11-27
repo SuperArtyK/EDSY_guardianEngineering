@@ -10,8 +10,8 @@ Frontier Customer Services (https://forums.frontier.co.uk/threads/elite-dangerou
 */
 'use strict';
 window.edsy = new (function() {
-	var VERSIONS = [419039901,419039901,422019901,422019901]; /* HTML,CSS,DB,JS */
-	var LASTMODIFIED = 20250930;
+	var VERSIONS = [419039901,419039901,422019901,422019902]; /* HTML,CSS,DB,JS */
+	var LASTMODIFIED = 20251001;
 	
 	var EMPTY_OBJ = {};
 	var EMPTY_ARR = [];
@@ -101,11 +101,11 @@ window.edsy = new (function() {
 		436110 : { name:"6A SCO \"V1\", IR+FB",                  modulehash:"JAfRG-bG0060upD6upD8qpDE_PcGzcQKsPc",             tag:'T' }, // CG reward / human tech broker
 		437110 : { name:"7A SCO \"V1\", IR+FB",                  modulehash:"JAg-G-bG0060upD6upD8qpDE_PcGzcQKsPc",             tag:'T' }, // CG reward / human tech broker
 		
-		  5510 : { name:"5E Anti-Corrosion Cargo (32T)",         modulehash:"H08d00",                                          tag:'C' }, // CG reward
-		  6510 : { name:"6E Anti-Corrosion Cargo (64T)",         modulehash:"H0AB00",                                          tag:'C' }, // CG reward
+		  5510 : { name:"5E Anti-Corrosion Cargo (Cap: 32)",     modulehash:"H08d00",                                          tag:'C' }, // CG reward
+		  6510 : { name:"6E Anti-Corrosion Cargo (Cap: 64)",     modulehash:"H0AB00",                                          tag:'C' }, // CG reward
 		
-		  5500 : { name:"5E Cargo Rack, ECR",                    modulehash:"J08cG-ZG0010vW0",                                 tag:'C' }, // CG reward
-		  6500 : { name:"6E Cargo Rack, ECR",                    modulehash:"J0AAG-ZG0010vW0",                                 tag:'C' }, // CG reward
+		  5500 : { name:"5E Cargo Rack, ECR (Cap: 43)",          modulehash:"J08cG-ZG0010vW0",                                 tag:'C' }, // CG reward
+		  6500 : { name:"6E Cargo Rack, ECR (Cap: 86)",          modulehash:"J0AAG-ZG0010vW0",                                 tag:'C' }, // CG reward
 		
 		111300 : { name:"1I DSS \"V1\", ERx2",                   modulehash:"J2jwG-fG001P000",                                 tag:'T' }, // human tech broker
 		303100 : { name:"3A Shield Gen, KR+TR",                  modulehash:"J7PcG-bG0044sPc8wPccupDgvcQ",                     tag:'C' }, // CG reward
