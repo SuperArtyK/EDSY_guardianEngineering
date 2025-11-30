@@ -3077,7 +3077,7 @@ window.edsy = new (function() {
 		
 		
 		getEDSYURL: function() {
-			return window.location.protocol + '//' + window.location.hostname + window.location.pathname + '#/L=' + this.getHash();
+			return window.location.protocol + '//' + window.location.host + window.location.pathname + '#/L=' + this.getHash();
 		}, // getEDSYURL()
 		
 		
@@ -7333,7 +7333,7 @@ if(false && current.dev) console.log("updateUIModulePickerWarnings(): modid "+mo
 		updateUIFitTitle();
 		if (current.hashlock)
 			return false;
-		buildhash = window.location.protocol + '//' + window.location.hostname + window.location.pathname + '#/L=' + (buildhash || current.fit.getHash());
+		buildhash = window.location.protocol + '//' + window.location.host + window.location.pathname + '#/L=' + (buildhash || current.fit.getHash());
 		if (cache.feature.history) {
 			window.history.replaceState(null, null, buildhash);
 		} else {
