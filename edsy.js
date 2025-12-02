@@ -10,8 +10,8 @@ Frontier Customer Services (https://forums.frontier.co.uk/threads/elite-dangerou
 */
 'use strict';
 window.edsy = new (function() {
-	var VERSIONS = [419039901,419039901,422019901,422019902]; /* HTML,CSS,DB,JS */
-	var LASTMODIFIED = 20251001;
+	var VERSIONS = [419039901,423009901,423009901,423009901]; /* HTML,CSS,DB,JS */
+	var LASTMODIFIED = 20251202;
 	
 	var EMPTY_OBJ = {};
 	var EMPTY_ARR = [];
@@ -984,7 +984,7 @@ window.edsy = new (function() {
 			if (module.class > slotsize) return false; // module is too large for the slot
 			if (module.class < slotsize && this.slotgroup === 'component' && (this.slotnum == CORE_ABBR_SLOT.LS || this.slotnum == CORE_ABBR_SLOT.SS)) return false; // module is too small for the slot (i.e. life support, sensors)
 			if (module.class < slotsize && module.noundersize) return false; // mtype can normally be undersized, but this module cannot (i.e. SCO FSD)
-			if (module.reserved && !module.reserved[shipid]) return false; // module does not allow the ship (i.e. fighter hangars, luxury cabins, mk ii cargo racks, mk ii mining multi-limpet controllers)
+			if (module.reserved && !module.reserved[shipid]) return false; // module does not allow the ship (i.e. fighter hangars, luxury cabins, Mk II stuff
 			var shipreserved = ((ship.reserved || EMPTY_OBJ)[this.slotgroup] || EMPTY_OBJ)[this.slotnum];
 			if (shipreserved && !shipreserved[module.mtype]) return false; // slot does not allow the module type (i.e. Beluga/Orca/Dolphin cabins-only slots, Panther cargo-only slots, Prospector mining/limpet/hangar slots)
 			// TODO: generalize these special cases for mk ii cargo racks and mk ii mining multi-limpet controllers only in 'Cargo' or 'LimpetController' slots, respectively
@@ -2287,7 +2287,7 @@ window.edsy = new (function() {
 		
 		
 		getModule: function(modid) {
-			return (cache.shipModules[this.shipid][modid] || eddb.module[modid]);
+			return ((cache.shipModules[this.shipid] || EMPTY_OBJ)[modid] || eddb.module[modid]);
 		}, // getModule()
 		
 		
@@ -4746,11 +4746,16 @@ if (true && current.dev) console.log(json.Ship+' '+modulejson.Item+' leftover '+
 		cache.shipModules = {};
 		cache.shipBuild = {};
 		cache.shipHash = {};
+		cache.hiddenmods = [];
 		for (var shipid in eddb.ship) {
 			var ship = eddb.ship[shipid];
 			cache.shipModules[shipid] = {};
 			for (var modid in (ship.module || EMPTY_OBJ)) {
-				cache.shipModules[shipid][modid] = clone(clone({}, eddb.module[modid]), ship.module[modid]);
+				var module = clone(clone({}, eddb.module[modid]), ship.module[modid]);
+				cache.shipModules[shipid][modid] = module;
+				if (module.hidden) {
+					cache.hiddenmods.push(modid);
+				}
 			}
 			var build = new Build(shipid, true);
 			cache.shipBuild[shipid] = build;
@@ -4785,13 +4790,21 @@ if (true && current.dev) console.log(json.Ship+' '+modulejson.Item+' leftover '+
 			}
 		}
 		
-		// initialize stock module hashes and find size gaps
+		// initialize stock module hashes and reserved modules, and find size gaps
 		cache.moduleHash = {};
+		cache.reservedmods = [];
 		for (var modid in eddb.module) {
 			cache.moduleHash[modid] = Slot.getModuleIDStoredHash(modid);
-			var mtype = eddb.module[modid].mtype;
-			if (cache.mtypeModules[mtype] && !eddb.module[modid].hidden) {
+			var module = eddb.module[modid];
+			var mtype = module.mtype;
+			if (cache.mtypeModules[mtype]) {
 				cache.mtypeModules[mtype].push(modid);
+			}
+			if (module.hidden) {
+				cache.hiddenmods.push(modid);
+			}
+			if (module.reserved) {
+				cache.reservedmods.push(modid);
 			}
 		}
 		cache.mtypeSizeGaps = {};
@@ -6984,8 +6997,35 @@ if (true && current.dev) console.log(json.Ship+' '+modulejson.Item+' leftover '+
 		var pwrdraw_ret = current.fit.getStat('pwrdraw_ret');
 		var pwrbst = current.fit.getStat('pwrbst') / 100.0;
 		
-		// mark undersized or disallowed modules
-		for (var mtype in { cpp:1, ct:1, cpd:1,  cft:1, icr:1, ifh:1, ipc:1, isg:1 }) {
+		// mark hidden modules
+		for (var m = 0;  m < cache.hiddenmods.length;  m++) {
+			var modid = cache.hiddenmods[m];
+			var namehashes = Object.keys(current.stored.moduleNamehashStored[modid] || EMPTY_OBJ);
+			namehashes.push('');
+			for (var n = 0;  n < namehashes.length;  n++) {
+				var namehash = namehashes[n];
+				var module = current.fit.getModule(modid);
+				var el = document.getElementById('outfitting_module.' + modid + '.' + namehash);
+				el.classList.toggle('hidden', !!module.hidden);
+			}
+		}
+		
+		// mark disallowed modules
+		for (var m = 0;  m < cache.reservedmods.length;  m++) {
+			var modid = cache.reservedmods[m];
+			var namehashes = Object.keys(current.stored.moduleNamehashStored[modid] || EMPTY_OBJ);
+			namehashes.push('');
+			for (var n = 0;  n < namehashes.length;  n++) {
+				var namehash = namehashes[n];
+				var module = current.fit.getModule(modid);
+				var notallowed = (module.reserved && !module.reserved[shipid]);
+				var el = document.getElementById('outfitting_module.' + modid + '.' + namehash);
+				el.classList.toggle('notallowed', !!notallowed);
+			}
+		}
+		
+		// mark undersized modules
+		for (var mtype in { cpp:1, ct:1, cpd:1, isg:1 }) {
 			for (var m = 0;  m < cache.mtypeModules[mtype].length;  m++) {
 				var modid = cache.mtypeModules[mtype][m];
 				var namehashes = Object.keys(current.stored.moduleNamehashStored[modid] || EMPTY_OBJ);
@@ -6998,7 +7038,6 @@ if (true && current.dev) console.log(json.Ship+' '+modulejson.Item+' leftover '+
 						current.tempSlot.setModuleID(modid);
 					}
 					var notenough = false;
-					var notallowed = false;
 					switch (mtype) {
 					case 'cpp':
 						notenough = ((current.tempSlot.getEffectiveAttrValue('pwrcap') * (1 + pwrbst)) < pwrdraw_ret[0]);
@@ -7012,22 +7051,12 @@ if (true && current.dev) console.log(json.Ship+' '+modulejson.Item+' leftover '+
 						notenough = (current.tempSlot.getEffectiveAttrValue('engcap') < (boostcost + BOOST_MARGIN));
 						break;
 					
-					case 'cft':
-					case 'icr':
-					case 'ifh':
-					case 'ipc':
-						var module = eddb.module[modid];
-						notallowed = (module.reserved && !module.reserved[shipid]);
-if(false && current.dev) console.log("updateUIModulePickerWarnings(): modid "+modid+" mtype "+mtype+(notallowed ? " notallowed" : " allowed")+" on ship "+shipid);
-						break;
-						
 					case 'isg':
 						notenough = (current.tempSlot.getEffectiveAttrValue('genmaxmass') < mass);
 						break;
 					}
 					var el = document.getElementById('outfitting_module.' + modid + '.' + namehash);
 					el.classList.toggle('notenough', !!notenough);
-					el.classList.toggle('notallowed', !!notallowed);
 				}
 			}
 		}
@@ -8128,19 +8157,15 @@ if(false && current.dev) console.log("setCurrentSlot(): slot "+slotgroup+ " #"+s
 		
 		var slot = current.fit.getSlot(slotgroup, slotnum);
 		
-		// TODO: generalize this logic for mk ii cargo racks and mk ii mining multi-limpet controllers only in 'Cargo' and 'LimpetController' slots, respectively
-		var resmods = cache.mtypeModules['icr'].concat(cache.mtypeModules['imlc']);
-		for (var m = 0;  m < resmods.length;  m++) {
-			var modid = resmods[m];
+		for (var m = 0;  m < cache.reservedmods.length;  m++) {
+			var modid = cache.reservedmods[m];
 			var module = eddb.module[modid];
-			if (module.reserved) {
-				var namehashes = Object.keys(current.stored.moduleNamehashStored[modid] || EMPTY_OBJ);
-				namehashes.push('');
-				for (var n = 0;  n < namehashes.length;  n++) {
-					var namehash = namehashes[n];
-					var el = document.getElementById('outfitting_module.' + modid + '.' + namehash);
-					el.classList.toggle('notallowed', !slot.isModuleIDAllowed(modid));
-				}
+			var namehashes = Object.keys(current.stored.moduleNamehashStored[modid] || EMPTY_OBJ);
+			namehashes.push('');
+			for (var n = 0;  n < namehashes.length;  n++) {
+				var namehash = namehashes[n];
+				var el = document.getElementById('outfitting_module.' + modid + '.' + namehash);
+				el.classList.toggle('notallowed', !slot.isModuleIDAllowed(modid));
 			}
 		}
 		
