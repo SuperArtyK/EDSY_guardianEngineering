@@ -10,9 +10,9 @@ Frontier Customer Services (https://forums.frontier.co.uk/threads/elite-dangerou
 */
 'use strict';
 var eddb = {
-	version : 423009901,
-	edsy_versions_db : [419039901,423009901,423009901,423009901], /* HTML,CSS,DB,JS */
-	edsy_lastmodified_db : 20251202,
+	version : 423009902,
+	edsy_versions_db : [419039901,423009901,423009902,423009901], /* HTML,CSS,DB,JS */
+	edsy_lastmodified_db : 20251203,
 	ship : {
 		 1 : {
 			fdid:128049249, fdname:'SideWinder', eddbid:18,
@@ -3093,7 +3093,7 @@ var eddb = {
 		43831 : { mtype:'cfsdo', cost: 20515650, namekey:43231, name:'Frame Shift Drive (SCO)', class:8, rating:'C', mass:160.00, integ:169, pwrdraw:0.88, boottime:10, fsdoptmass:4200.0, fsdheat:50.0, maxfuel:20.40, fuelmul:0.012, fuelpower:2.90, sco:'Available', scospd: 31, scoacc:0.040, scoheat: 92.860, scoconint:0.640, scofuel:4.31, noundersize:1, fdid:129036578, fdname:'Int_Hyperdrive_Overcharge_Size8_Class3' },
 		43821 : { mtype:'cfsdo', cost: 20515650, namekey:43231, name:'Frame Shift Drive (SCO)', class:8, rating:'B', mass:160.00, integ:169, pwrdraw:0.88, boottime:10, fsdoptmass:4200.0, fsdheat:50.0, maxfuel:20.40, fuelmul:0.012, fuelpower:2.90, sco:'Available', scospd: 31, scoacc:0.040, scoheat:130.000, scoconint:0.640, scofuel:3.08, noundersize:1, fdid:129036579, fdname:'Int_Hyperdrive_Overcharge_Size8_Class4' },
 		43811 : { mtype:'cfsdo', cost: 61546940, namekey:43231, name:'Frame Shift Drive (SCO)', class:8, rating:'A', mass:160.00, integ:188, pwrdraw:1.05, boottime:10, fsdoptmass:4670.0, fsdheat:50.0, maxfuel:20.70, fuelmul:0.013, fuelpower:2.90, sco:'Available', scospd: 42, scoacc:0.040, scoheat:123.500, scoconint:0.624, scofuel:4.11, noundersize:1, fdid:129036580, fdname:'Int_Hyperdrive_Overcharge_Size8_Class5' },
-		43812 : { mtype:'cfsdo', cost: 82042060,                name:'Mk II Supercharge Optimised FSD (SCO)', class:8, rating:'A', mass:160.00, integ:188, pwrdraw:1.05, boottime:10, fsdoptmass:4670.0, fsdheat:50.0, maxfuel:20.70, fuelmul:0.013, fuelpower:2.90, sco:'Available', scospd: 42, scoacc:0.040, scoheat:123.500, scoconint:0.624, scofuel:4.11, noundersize:1, reserved:{47:1}, fdid:129038968, fdname:'Int_Hyperdrive_Overcharge_Size8_Class5_Overchargebooster_MkII' },
+		43812 : { mtype:'cfsdo', cost: 82042060,                name:'Mk II Supercharge Optimised FSD (SCO)', class:8, rating:'A', mass:160.00, integ:188, pwrdraw:1.05, boottime:10, fsdoptmass:4670.0, fsdheat:50.0, maxfuel: 6.80, fuelmul:0.01106682, fuelpower:2.50, sco:'Available', scospd: 42, scoacc:0.040, scoheat:123.500, scoconint:0.624, scofuel:4.11, noundersize:1, reserved:{47:1}, fdid:129038968, fdname:'Int_Hyperdrive_Overcharge_Size8_Class5_Overchargebooster_MkII' },
 		
 		
 		44150 : { mtype:'cls', cost:     520, namekey:44110, name:'Life Support', class:1, rating:'E', mass:  1.30, integ: 32, pwrdraw:0.32, boottime:1, emgcylife: 300, fdid:128064138, fdname:'Int_LifeSupport_Size1_Class1', eddbid:996 }, // verify price
