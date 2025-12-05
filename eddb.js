@@ -12,7 +12,7 @@ Frontier Customer Services (https://forums.frontier.co.uk/threads/elite-dangerou
 var eddb = {
 	version : 423009903,
 	edsy_versions_db : [419039901,423009901,423009903,423009901], /* HTML,CSS,DB,JS */
-	edsy_lastmodified_db : 20251204,
+	edsy_lastmodified_db : 20251205,
 	ship : {
 		 1 : {
 			fdid:128049249, fdname:'SideWinder', eddbid:18,
@@ -1229,8 +1229,8 @@ var eddb = {
 				40131 : { cost:      0, mass: 0.00, fdid:129031231, fdname:'CobraMkV_Armour_Grade1' }, // Lightweight Alloy
 				40122 : { cost: 795785, mass:14.00, fdid:129031232, fdname:'CobraMkV_Armour_Grade2' }, // Reinforced Alloy
 				40113 : { cost:1790515, mass:27.00, fdid:129031233, fdname:'CobraMkV_Armour_Grade3' }, // Military Grade Composite
-				40114 : { cost:4177867, mass:27.00, fdid:129031235, fdname:'CobraMkV_Armour_Mirrored' }, // Mirrored Surface Composite
-				40115 : { cost:4689158, mass:27.00, fdid:129031234, fdname:'CobraMkV_Armour_Reactive' }, // Reactive Surface Composite
+				40114 : { cost:4177867, mass:27.00, fdid:129031234, fdname:'CobraMkV_Armour_Mirrored' }, // Mirrored Surface Composite
+				40115 : { cost:4689158, mass:27.00, fdid:129031235, fdname:'CobraMkV_Armour_Reactive' }, // Reactive Surface Composite
 			},
 		},
 		17 : {
@@ -1357,17 +1357,17 @@ var eddb = {
 				internal :[650,30650,550,0,0,0,0,0,0,0,0,0,3152,3151],
 			},
 			module:{
-				40131 : { cost:        0, mass:  0.00,           fdid:129036581, fdname:'Explorer_NX_Armour_Grade1_Default', eddbid:null }, // Lightweight Alloy
-				40122 : { cost:NaN      , mass:NaN   , hidden:1, fdid:null     , fdname:'Explorer_NX_Armour_Grade2', eddbid:null, hidden:1 }, // Reinforced Alloy
-				40113 : { cost:NaN      , mass:NaN   , hidden:1, fdid:null     , fdname:'Explorer_NX_Armour_Grade3', eddbid:null, hidden:1 }, // Military Grade Composite
-				40114 : { cost:NaN      , mass:NaN   , hidden:1, fdid:null     , fdname:'Explorer_NX_Armour_Mirrored', eddbid:null, hidden:1 }, // Mirrored Surface Composite
-				40115 : { cost:NaN      , mass:NaN   , hidden:1, fdid:null     , fdname:'Explorer_NX_Armour_Reactive', eddbid:null, hidden:1 }, // Reactive Surface Composite
+				40131 : { cost:        0, mass:  0.00, fdid:129036581, fdname:'Explorer_NX_Armour_Grade1_Default', eddbid:null }, // Lightweight Alloy
+				40122 : { cost:NaN      , mass:NaN   , fdid:null     , fdname:null, eddbid:null, hidden:1 }, // Reinforced Alloy
+				40113 : { cost:NaN      , mass:NaN   , fdid:null     , fdname:null, eddbid:null, hidden:1 }, // Military Grade Composite
+				40114 : { cost:NaN      , mass:NaN   , fdid:null     , fdname:null, eddbid:null, hidden:1 }, // Mirrored Surface Composite
+				40115 : { cost:NaN      , mass:NaN   , fdid:null     , fdname:null, eddbid:null, hidden:1 }, // Reactive Surface Composite
 				
-				40136 : { cost:  9743070, mass: 15.00, hidden:0, fdid:129036571, fdname:'Explorer_NX_Armour_Grade1', eddbid:null, hidden:0 }, // Mk II Ablative Lightweight Alloy
-				40127 : { cost: 77944520, mass: 30.00, hidden:0, fdid:129036572, fdname:'Explorer_NX_Armour_Grade2', eddbid:null, hidden:0 }, // Mk II Ablative Reinforced Alloy
-				40118 : { cost:175375160, mass: 60.00, hidden:0, fdid:129036573, fdname:'Explorer_NX_Armour_Grade3', eddbid:null, hidden:0 }, // Mk II Ablative Military Grade Composite
-				40119 : { cost:414469960, mass: 60.00, hidden:0, fdid:129036574, fdname:'Explorer_NX_Armour_Mirrored', eddbid:null, hidden:0 }, // Mk II Ablative Mirrored Surface Composite
-				40110 : { cost:459288060, mass: 60.00, hidden:0, fdid:129036575, fdname:'Explorer_NX_Armour_Reactive', eddbid:null, hidden:0 }, // Mk II Ablative Reactive Surface Composite
+				40136 : { cost:  9743070, mass: 15.00, fdid:129036571, fdname:'Explorer_NX_Armour_Grade1', eddbid:null, hidden:0 }, // Mk II Ablative Lightweight Alloy
+				40127 : { cost: 77944520, mass: 30.00, fdid:129036572, fdname:'Explorer_NX_Armour_Grade2', eddbid:null, hidden:0 }, // Mk II Ablative Reinforced Alloy
+				40118 : { cost:175375160, mass: 60.00, fdid:129036573, fdname:'Explorer_NX_Armour_Grade3', eddbid:null, hidden:0 }, // Mk II Ablative Military Grade Composite
+				40119 : { cost:414469960, mass: 60.00, fdid:129036574, fdname:'Explorer_NX_Armour_Mirrored', eddbid:null, hidden:0 }, // Mk II Ablative Mirrored Surface Composite
+				40110 : { cost:459288060, mass: 60.00, fdid:129036575, fdname:'Explorer_NX_Armour_Reactive', eddbid:null, hidden:0 }, // Mk II Ablative Reactive Surface Composite
 			},
 		},
 		/* 18-19: multipurpose;  29,20: combat;  39,30: industrial;  48-49,40: exploration;  54-59,50: passenger;  60: superheavy */
@@ -2903,11 +2903,11 @@ var eddb = {
 		40114 : { mtype:'cbh', cost:NaN, name:'Mirrored Surface Composite', class:1, rating:'A', mass:NaN, hullbst:250.0, kinres:-75.0, thmres: 50.0, expres:-50.0, axeres:90.0, fdid:null, fdname:null, eddbid:null }, // placeholder
 		40115 : { mtype:'cbh', cost:NaN, name:'Reactive Surface Composite', class:1, rating:'A', mass:NaN, hullbst:250.0, kinres: 25.0, thmres:-40.0, expres: 20.0, axeres:90.0, fdid:null, fdname:null, eddbid:null }, // placeholder
 		
-		40136 : { mtype:'cbh', cost:NaN, name:'Mk II Ablative Lightweight Alloy',          class:1, rating:'C', mass:NaN, hullbst: 80.0, kinres:-20.0, thmres:  0.0, expres:-40.0, axeres:90.0, reserved:{47:1}, hidden:1, fdid:null, fdname:null, eddbid:null }, // placeholder
-		40127 : { mtype:'cbh', cost:NaN, name:'Mk II Ablative Reinforced Alloy',           class:1, rating:'B', mass:NaN, hullbst:152.0, kinres:-20.0, thmres:  0.0, expres:-40.0, axeres:90.0, reserved:{47:1}, hidden:1, fdid:null, fdname:null, eddbid:null }, // placeholder
-		40118 : { mtype:'cbh', cost:NaN, name:'Mk II Ablative Military Grade Composite',   class:1, rating:'A', mass:NaN, hullbst:250.0, kinres:-20.0, thmres:  0.0, expres:-40.0, axeres:90.0, reserved:{47:1}, hidden:1, fdid:null, fdname:null, eddbid:null }, // placeholder
-		40119 : { mtype:'cbh', cost:NaN, name:'Mk II Ablative Mirrored Surface Composite', class:1, rating:'A', mass:NaN, hullbst:250.0, kinres:-75.0, thmres: 50.0, expres:-50.0, axeres:90.0, reserved:{47:1}, hidden:1, fdid:null, fdname:null, eddbid:null }, // placeholder
-		40110 : { mtype:'cbh', cost:NaN, name:'Mk II Ablative Reactive Surface Composite', class:1, rating:'A', mass:NaN, hullbst:250.0, kinres: 25.0, thmres:-40.0, expres: 20.0, axeres:90.0, reserved:{47:1}, hidden:1, fdid:null, fdname:null, eddbid:null }, // placeholder
+		40136 : { mtype:'cbh', cost:NaN, name:'Mk II Ablative Lightweight Alloy',          class:1, rating:'C', mass:NaN, hullbst: 80.0, kinres:-20.0, thmres:  0.0, expres:-40.0, axeres:90.0, reserved:{47:1}, fdid:null, fdname:null, eddbid:null, hidden:1 }, // placeholder
+		40127 : { mtype:'cbh', cost:NaN, name:'Mk II Ablative Reinforced Alloy',           class:1, rating:'B', mass:NaN, hullbst:152.0, kinres:-20.0, thmres:  0.0, expres:-40.0, axeres:90.0, reserved:{47:1}, fdid:null, fdname:null, eddbid:null, hidden:1 }, // placeholder
+		40118 : { mtype:'cbh', cost:NaN, name:'Mk II Ablative Military Grade Composite',   class:1, rating:'A', mass:NaN, hullbst:250.0, kinres:-20.0, thmres:  0.0, expres:-40.0, axeres:90.0, reserved:{47:1}, fdid:null, fdname:null, eddbid:null, hidden:1 }, // placeholder
+		40119 : { mtype:'cbh', cost:NaN, name:'Mk II Ablative Mirrored Surface Composite', class:1, rating:'A', mass:NaN, hullbst:250.0, kinres:-75.0, thmres: 50.0, expres:-50.0, axeres:90.0, reserved:{47:1}, fdid:null, fdname:null, eddbid:null, hidden:1 }, // placeholder
+		40110 : { mtype:'cbh', cost:NaN, name:'Mk II Ablative Reactive Surface Composite', class:1, rating:'A', mass:NaN, hullbst:250.0, kinres: 25.0, thmres:-40.0, expres: 20.0, axeres:90.0, reserved:{47:1}, fdid:null, fdname:null, eddbid:null, hidden:1 }, // placeholder
 		
 		
 		41250 : { mtype:'cpp', cost:     1980, namekey:41210, name:'Power Plant', class:2, rating:'E', mass:  2.50, integ: 46, pwrcap: 6.40, heateff:1.00, noblueprints:{misc_agzr:1}, fdid:128064033, fdname:'Int_Powerplant_Size2_Class1', eddbid:891 },
