@@ -50,7 +50,8 @@ Which requires the knowledge of the equpment of the pilot, which works at this s
 
 # So. List of changes:
 
-* Guardian Hull and Module Reinforcements are now 1.5x the human counterpart (instead of 1.25x) to feel more rewarding for the grind and energy requirement.
+* Guardian Hull and Module Reinforcements are now 1.45x the human counterpart (instead of 1.25x) to feel more rewarding for the grind and energy requirement.
+    * 1.35x they start to seem not as much underwhelming (engineering with that is a bit meh), 1.4x they look somewhat okay, 1.45x seem perfect, 1.5 seems a bit much as engineering them makes the performance jump too much compared to human.
     * This also brings them to the trend of guardian modules being grade 3 engineering of human ones
 
 * Guardian modules have engineering working for them
