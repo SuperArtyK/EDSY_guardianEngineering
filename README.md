@@ -1,6 +1,6 @@
 # EDSY with guardian engineering
 
-So this is a fork of the EDSY calculator, with numbers adjusted for guardian modules. 
+So this is a fork of the EDSY calculator, with numbers adjusted for guardian modules. Link modified edsy: https://superartyk.github.io/EDSY_guardianEngineering/
 
 Also at the same time adding the long-desired module reinforcement engineering. (Which makes me realise that hull tanking is not that bad, and honestly feel like *intentionally* nerfed.)
 
