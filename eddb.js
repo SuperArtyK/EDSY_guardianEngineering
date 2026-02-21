@@ -1953,7 +1953,7 @@ var eddb = {
 		ihrp_lw : { name:'Light Weight', maxgrade:5, mass:[-8,-12,-16,-20,-24], pwrdraw:[3,6,9,12,15], hullbst:[8,12,16,20,24], hullrnf:[-4,-8,-12,-16,-20], mats:[ {iro:1}, {iro:1, condco:1}, {iro:1, condco:1, hideco:1}, {ger:1, coce:1, prco:1}, {coce:1, tin:1, migral:1} ], fdname:'HullReinforcement_Advanced' },
 		ihrp_tr : { name:'Thermal Resistant', maxgrade:5, hullrnf:[3,6,9,12,15], pwrdraw:[3,6,9,12,15],  kinres:[-2,-4,-6,-8,-10], thmres:[12,19,26,33,40], expres:[-2,-4,-6,-8,-10], mats:[ {hecowi:1}, {nic:1, hedipl:1}, {saal:1, van:1, heex:1}, {gaal:1, tun:1, heva:1}, {phal:1, mol:1, prhera:1} ], fdname:'HullReinforcement_Thermic' },
 		
-		imrp_hd : { name:'Fortified Lattice', maxgrade:5, pwrdraw:[6,12,18,24,30], mass:[8,16,24,32,40], dmgprot:[-3,-6,-9,-12,-15], integ:[48,72,96,120,144], mats:[ {car:1}, {car:1, shem:1}, {car:1, shem:1, hideco:1}, {van:1, shse:1, prco:1}, {tun:1, cosh:1, codyco:1} ], fdname:'ModuleReinforcement_HeavyDuty' },
+		imrp_hd : { name:'Fortified Lattice', maxgrade:5, pwrdraw:[6,12,18,24,30], mass:[8,16,24,32,40], dmgprot:[-5,-10,-15,-20,-25], integ:[48,72,96,120,144], mats:[ {car:1}, {car:1, shem:1}, {car:1, shem:1, hideco:1}, {van:1, shse:1, prco:1}, {tun:1, cosh:1, codyco:1} ], fdname:'ModuleReinforcement_HeavyDuty' },
 		
 		imrp_ir : { name:'Ablative Sheathing', maxgrade:5, pwrdraw:[3,6,9,12,15], integ:[-4,-8,-12,-16,-20], mass:[4,8,12,16,20], dmgprot:[6,12,18,24,30], mats:[ {car:1}, {car:1, shem:1}, {car:1, shem:1, hideco:1}, {van:1, shse:1, prco:1}, {tun:1, cosh:1, codyco:1} ], fdname:'ModuleReinforcement_HeavyDuty' },
 		
@@ -3857,4 +3857,5 @@ var eddb = {
 		
 	}, // eddb.module{}
 }; // eddb{}
+
 
