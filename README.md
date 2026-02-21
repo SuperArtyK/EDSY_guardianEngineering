@@ -1,10 +1,11 @@
 # EDSY with guardian engineering
 
-So this is a fork of the EDSY calculator, with numbers adjusted for guardian modules. Link modified edsy: https://superartyk.github.io/EDSY_guardianEngineering/
+This is how I think the guardian overhaul should be done, to make the grind of unlocking them worth while, improving base stats of some and adding engineering to them.
+
+So this is a fork of the EDSY calculator, with numbers adjusted for guardian modules. Link to modified edsy: https://superartyk.github.io/EDSY_guardianEngineering/
 
 Also at the same time adding the long-desired module reinforcement engineering. (Which makes me realise that hull tanking is not that bad, and honestly feel like *intentionally* nerfed.)
 
-This is how I think the guardian overhaul should be done, to make the grind of unlocking them worth while, improving base stats of some and adding engineering to them.
 
 Because the game progression is currently this:
 
