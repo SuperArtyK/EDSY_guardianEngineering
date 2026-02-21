@@ -6,7 +6,6 @@ So this is a fork of the EDSY calculator, with numbers adjusted for guardian mod
 
 Also at the same time adding the long-desired module reinforcement engineering. (Which makes me realise that hull tanking is not that bad, and honestly feel like *intentionally* nerfed.)
 
-
 Because the game progression is currently this:
 
 * Beginning of the game -- ship module progression with credits. Fun and straightforward
@@ -49,23 +48,37 @@ Which requires the knowledge of the equpment of the pilot, which works at this s
 
 
 
-# So. List of changes:
+# So. List of changes and my proposal to fix guardians and engineering:
 
-* Guardian Hull and Module Reinforcements are now 1.45x the human counterpart (instead of 1.25x) to feel more rewarding for the grind and energy requirement.
-    * 1.35x they start to seem not as much underwhelming (engineering with that is a bit meh), 1.4x they look somewhat okay, 1.45x seem perfect, 1.5 seems a bit much as engineering them makes the performance jump too much compared to human.
+### I have not added proper material requirements for blueprints yet!
+
+* Guardian Hull and Module Reinforcements are now 1.5x the human counterpart (instead of 1.25x) to feel more rewarding for the grind and energy requirement.
+    
+	* 1.35x they start to seem not as much underwhelming (engineering with that is a bit meh), 1.4x they look somewhat okay, 1.45x seem attractive, 1.5x is perfect (while the raw stats like Integrity seem to be high, the lack of Resistances makes up for that)
+    
+		* Additionally the 1.5x helps to use it to allow hull-tanking to be closer to shield-tanking
+		
     * This also brings them to the trend of guardian modules being grade 3 engineering of human ones
 
 * Guardian modules have engineering working for them
-    * Guardian Hull Reinforcement gets 30% more power draw on Heavy Duty blueprint, and 15% on resistance blueprints
+    * Guardian Hull Reinforcement gets 40% more power draw on Heavy Duty blueprint, 15% on resistance blueprints, and -24% on light-weight
 
 * Added module reinforcement engineering (pls suggest better names):
-    * "Fortified Lattice": 144% increase in integrity at 40% more mass and -15% protection percentage (60% on D-rated turns into 51%, 3x of those turn to 88% instead of 94% protection)
-        * Guardian MRP's have additional 30% power draw
+    * "Fortified Lattice": 250% increase in integrity at 100% more mass and -40% protection percentage
+        * 60% on D-rated turns into 39% (3x of those turn to 77% instead of 94% protection)
+        * 5D MRP has 350 integrity, with this modification: 1225
+            
+			* While this integrity might seem excessive, this is a counterpart to shield tanking and engineering (which counteract the hulltank by module sniping), where shield boosters get **ADDITIVE** increase in reinforcement for heavy duty, achieving over **3X** the improvement with grade 5 Heavy Duty.
+        
+		* Guardian MRP's have additional 100% power draw
+            * Guardian 5D MRP turns 525 integrity into 1837.5
 
-    * "Ablative Sheathing": 30% increase in protection% at the cost of 20% more mass and -20% integrity (60% on D-rated, turns into 78%, 3x of thhose turn to 99%)
-        * Guardian MRP's have additional 15% power draw
+    * "Ablative Sheathing": 30% increase in protection% at the cost of 30% more mass and -20% integrity
+        * 60% on D-rated, turns into 78%, 3x of those turn to 99%
+        * Guardian MRP's have additional 40% power draw
 
-* EDSY-specific: Removed "illegal" blueprints from guardian weapons, to not allow to engineer for them
-    * This somewhat breaks the EDSY blueprints showing on pre-engineered ones, now showing a different blueprint. This is just a visual change, stats stay the same
+* EDSY-specific change: Removed "illegal" blueprints from guardian weapons, to not allow to engineer for them
+    
+	* This somewhat breaks the EDSY blueprints names showing on guardian pre-engineered modules, now showing a different blueprint. This is just a visual change, stats stay the same.
   
 
