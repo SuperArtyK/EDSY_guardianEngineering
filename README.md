@@ -1,4 +1,18 @@
-# EDSY with guardian engineering
+# (DEPRECATED) EDSY with guardian engineering
+
+=================================================
+
+While this project is relatively new, I'm closing/deprecating it down for a bit. Those were raw ideas I thought of myself in the span of a few days. 
+
+And don't really reflect the balance thoughts about all this i have now -- I'm still thinking of ways Elite can be improved.
+
+I don't consider the below to be proper changes to modules except few: 
+
+* GHRP and GMRP raw statistics adjustments
+* Transferring the human engineering blueprints to GHRP, guardian PP, and guardian PD.
+
+=================================================
+
 
 This is how I think the guardian overhaul should be done, to make the grind of unlocking them worth while, improving base stats of some and adding engineering to them.
 
